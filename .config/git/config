@@ -1,2 +1,5 @@
 [init]
 	defaultBranch = main
+[user]
+	name = Melker Widén
+	email = melker.widen@gmail.com
