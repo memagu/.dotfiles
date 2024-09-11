@@ -3,3 +3,5 @@
 [user]
 	name = Melker Widén
 	email = melker.widen@gmail.com
+[core]
+	editor = nvim
