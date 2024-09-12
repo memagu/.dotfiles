@@ -25,3 +25,8 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+export JAVA_HOME="/usr/lib/jvm/jdk-22.0.2-oracle-x64/"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+export PATH="/home/memagu/.local/share/coursier/bin:$PATH"
