@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -32,11 +32,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
- zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
- zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -95,9 +95,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+    export EDITOR='vim'
 else
-  export EDITOR='nvim'
+    export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -120,3 +120,20 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+fuck () {
+    TF_PYTHONIOENCODING=$PYTHONIOENCODING;
+    export TF_SHELL=zsh;
+    export TF_ALIAS=fuck;
+    TF_SHELL_ALIASES=$(alias);
+    export TF_SHELL_ALIASES;
+    TF_HISTORY="$(fc -ln -10)";
+    export TF_HISTORY;
+    export PYTHONIOENCODING=utf-8;
+    TF_CMD=$(
+    thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
+    ) && eval $TF_CMD;
+    unset TF_HISTORY;
+    export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
+    test -n "$TF_CMD" && print -s $TF_CMD
+}
