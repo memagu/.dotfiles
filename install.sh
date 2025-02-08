@@ -29,7 +29,7 @@ stow --adopt -t "$USER_HOME" core
 git reset --hard &> /dev/null
 
 echo "Installing additional pacages..."
-apt install -y neovim tmux xdg-user-dirs zsh > /dev/null
+apt install -y neovim tmux xdg-user-dirs zsh &> /dev/null
 
 echo "Setting up user directories..."
 xdg-user-dirs-update
