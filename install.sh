@@ -5,7 +5,7 @@ set -e
 # Ensure sudo.
 if [[ $EUID -ne 0 ]]; then
     echo "This script requires sudo privileges to run."
-    sudo -v
+    exit 1
 fi
 
 echo "Updating \"/etc/apt/sources.list\"..."
@@ -17,18 +17,21 @@ deb http://ftp.debian.org/debian testing-backports main
 EOF
 
 echo "Updating system packages..."
-sudo apt update && sudo apt upgrade -y
+apt update && sudo apt upgrade -y > /dev/null
+
+echo "Installing stow..."
+apt install stow
 
 echo "Linking dotfiles using stow..."
-cd ~/.dotfiles/
-stow --adopt -t ~ core 
+USER_HOME=$(getent passwd "$SUDO_USER" | cut -d: -f6)
+cd "$USER_HOME/.dotfiles/"
+stow --adopt -t "USER_HOME" core 
 git reset --hard
 
-echo "Installing pacages..."
-sudo apt install -y neovim tmux xdg-user-dirs zsh
+echo "Installing additional pacages..."
+apt install -y neovim tmux xdg-user-dirs zsh > /dev/null
 
 echo "Setting up user directories..."
 xdg-user-dirs-update
 
-echo "Done!
-
+echo "Done!"
