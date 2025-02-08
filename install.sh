@@ -17,16 +17,16 @@ deb http://ftp.debian.org/debian testing-backports main
 EOF
 
 echo "Updating system packages..."
-apt update > /dev/null && sudo apt upgrade -y > /dev/null
+apt update &> /dev/null && sudo apt upgrade -y &> /dev/null
 
 echo "Installing stow..."
-apt install -y stow > /dev/null
+apt install -y stow &> /dev/null
 
 echo "Linking dotfiles using stow..."
 USER_HOME=$(getent passwd "$SUDO_USER" | cut -d: -f6)
 cd "$USER_HOME/.dotfiles/"
 stow --adopt -t "$USER_HOME" core 
-git reset --hard
+git reset --hard &> /dev/null
 
 echo "Installing additional pacages..."
 apt install -y neovim tmux xdg-user-dirs zsh > /dev/null
