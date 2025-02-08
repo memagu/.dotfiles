@@ -25,7 +25,7 @@ apt install stow
 echo "Linking dotfiles using stow..."
 USER_HOME=$(getent passwd "$SUDO_USER" | cut -d: -f6)
 cd "$USER_HOME/.dotfiles/"
-stow --adopt -t "USER_HOME" core 
+stow --adopt -t "$USER_HOME" core 
 git reset --hard
 
 echo "Installing additional pacages..."
