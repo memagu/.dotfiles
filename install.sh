@@ -17,7 +17,7 @@ deb http://ftp.debian.org/debian testing-backports main
 EOF
 
 echo "Updating system packages..."
-apt update && sudo apt upgrade -y > /dev/null
+$(apt update && sudo apt upgrade -y) > /dev/null
 
 echo "Installing stow..."
 apt install -y stow > /dev/null
