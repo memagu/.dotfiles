@@ -14,13 +14,13 @@ deb http://deb.debian.org/debian testing main
 deb http://deb.debian.org/debian testing-updates main
 deb http://security.debian.org/debian-security testing-security main
 deb http://ftp.debian.org/debian testing-backports main
-EOF
+EOF > /dev/null
 
 echo "Updating system packages..."
 apt update && sudo apt upgrade -y > /dev/null
 
 echo "Installing stow..."
-apt install stow
+apt install -y stow > /dev/null
 
 echo "Linking dotfiles using stow..."
 USER_HOME=$(getent passwd "$SUDO_USER" | cut -d: -f6)
