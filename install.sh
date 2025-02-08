@@ -14,7 +14,7 @@ deb http://deb.debian.org/debian testing main
 deb http://deb.debian.org/debian testing-updates main
 deb http://security.debian.org/debian-security testing-security main
 deb http://ftp.debian.org/debian testing-backports main
-EOF > /dev/null
+EOF
 
 echo "Updating system packages..."
 apt update && sudo apt upgrade -y > /dev/null
