@@ -8,13 +8,16 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-echo "Updating \"/etc/apt/sources.list\"..."
-sudo cat > "/etc/apt/sources.list" << EOF
+OS_ID=$(grep -w "ID" /etc/os-release | cut -d= -f2 | tr -d '"')
+if  [[ "$OS_ID" == "debian" ]]; then
+    echo "Updating \"/etc/apt/sources.list\"..."
+    sudo cat > "/etc/apt/sources.list" << EOF
 deb http://deb.debian.org/debian testing main
 deb http://deb.debian.org/debian testing-updates main
 deb http://security.debian.org/debian-security testing-security main
 deb http://ftp.debian.org/debian testing-backports main
 EOF
+fi
 
 echo "Updating system packages..."
 apt update &> /dev/null && sudo apt upgrade -y &> /dev/null
