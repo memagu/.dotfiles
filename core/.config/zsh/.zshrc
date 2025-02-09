@@ -10,9 +10,10 @@ export ZSH="$ZDOTDIR/.oh-my-zsh"
 
 # Ensure Oh My Zsh is installed.
 if [[ ! -d "$ZSH" ]]; then
-    curl -fsSL "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh" -o install-omz.sh
-    sh install-omz.sh --keep-zshrc
-    rm install-omz.sh
+    OMZ_INSTALLER_PATH="$ZDOTDIR/install-omz.sh"
+    curl -fsSL "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh" -o "$OMZ_INSTALLER_PATH"
+    sh "$OMZ_INSTALLER_PATH" --keep-zshrc
+    rm "$OMZ_INSTALLER_PATH"
 fi
 
 # Ensure themes and plugins are installed.
