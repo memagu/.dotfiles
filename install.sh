@@ -31,7 +31,7 @@ cd "$USER_HOME/.dotfiles/"
 stow --adopt -t "$USER_HOME" core 
 git reset --hard &> /dev/null
 
-echo "Installing additional pacages..."
+echo "Installing additional packages..."
 apt install -y -qq gcc neovim npm tmux unzip wget xdg-user-dirs zsh
 
 echo "Setting up user directories..."
