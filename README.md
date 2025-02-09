@@ -21,4 +21,8 @@ Various configuration files
     sudo bash install.sh
     ```
     > **_NOTE:_** This will change /etc/apt/sources.list
-5. Correct mail and name in ~/.config/git/config
+5. Run Z shell
+    ```bash
+    zsh
+    ```
+6. Correct mail and name in ~/.config/git/config
