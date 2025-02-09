@@ -4,7 +4,7 @@ set -e
 
 # Ensure sudo.
 if [[ $EUID -ne 0 ]]; then
-    echo "This script requires sudo privileges to run."
+    echo "This script requires sudo privileges to run. Please run using: \"sudo bash install.sh\"."
     exit 1
 fi
 
@@ -32,7 +32,7 @@ stow --adopt -t "$USER_HOME" core
 git reset --hard &> /dev/null
 
 echo "Installing additional pacages..."
-apt install -y gcc neovim npm tmux wget xdg-user-dirs zsh &> /dev/null
+apt install -y -qq gcc neovim npm tmux wget xdg-user-dirs zsh
 
 echo "Setting up user directories..."
 sudo -u "$SUDO_USER" xdg-user-dirs-update
