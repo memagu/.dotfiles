@@ -2,7 +2,7 @@
 Various configuration files
 
 ## Installation
-> **_NOTE:_** This guide is meant for Debian but will work on other OSes with minor modifications.
+> **_NOTE:_** This guide is meant for Debian but will work on other OS:es with minor modifications.
 1. Install git and a dependency for submodules.
     ```bash
     sudo apt install -y git gettext
