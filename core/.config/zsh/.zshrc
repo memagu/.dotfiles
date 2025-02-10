@@ -39,8 +39,6 @@ fi
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 13
 
-COMPLETION_WAITING_DOTS="true"
-
 HIST_STAMPS="yyyy-mm-dd"
 
 HISTFILE="$XDG_STATE_HOME/zsh/history"
