@@ -229,6 +229,6 @@ bar {
 }
 
 focus_on_window_activation focus
-exec --no-startup-id picom -b
+exec --no-startup-id picom --backend glx -b
 exec xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 
