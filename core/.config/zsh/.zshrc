@@ -66,3 +66,4 @@ fi
 
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+alias please='sudo "$BASH" -c "$(history -p !!)"'
