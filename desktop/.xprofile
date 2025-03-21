@@ -1,5 +1,0 @@
-# xrandr --output LVDS-1 --mode 1366x768 --panning 1600x900 --scale 1.171303074670571010248901903x1.171875
-# xrandr --output LVDS-1 --mode 1366x768 --panning 1920x1080 --scale 1.405563689604685212298682284x1.40625
-
-export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
-source "${XINITRC}"

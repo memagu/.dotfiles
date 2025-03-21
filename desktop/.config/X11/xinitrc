@@ -1,2 +1,0 @@
-export WALLPAPER_PATH="${HOME}/Pictures/Wallpapers/debian_fade.jpg"
-feh --no-fehbg --bg-scale "${WALLPAPER_PATH}"
