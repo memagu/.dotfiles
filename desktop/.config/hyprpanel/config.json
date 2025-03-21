@@ -22,5 +22,16 @@
   "menus.clock.weather.location": "Lund",
   "menus.clock.time.military": true,
   "theme.bar.menus.opacity": 100,
-  "theme.bar.opacity": 20
+  "theme.bar.opacity": 20,
+  "wallpaper.image": "",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "librewolf",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "LibreWolf",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "󰈹",
+  "theme.bar.buttons.style": "default",
+  "theme.bar.buttons.background_opacity": 100,
+  "theme.bar.border.location": "none",
+  "theme.bar.floating": true,
+  "theme.bar.location": "top",
+  "bar.autoHide": "fullscreen",
+  "bar.workspaces.numbered_active_indicator": "underline"
 }
