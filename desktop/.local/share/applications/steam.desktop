@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=Steam
-Exec=/usr/bin/steam -forcedesktopscaling 1.25
+Exec=/usr/bin/steam-runtime -forcedesktopscaling 1.25
 Terminal=false
 Type=Application
