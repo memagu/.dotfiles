@@ -69,7 +69,12 @@ fi
 
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+# Aliases
 alias please='sudo'
-
 alias discord='/usr/bin/discord --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias spotify='/usr/bin/spotify --enable-features=UseOzonePlatform --ozone-platform=wayland'
+
+# Deno
+. "/home/memagu/.deno/env"
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/memagu/.config/zsh/completions:"* ]]; then export FPATH="/home/memagu/.config/zsh/completions:$FPATH"; fi
