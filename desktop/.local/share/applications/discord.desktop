@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Discord
+Exec=/usr/bin/discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+Terminal=false
+Type=Application
+
