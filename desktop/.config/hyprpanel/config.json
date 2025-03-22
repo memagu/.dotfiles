@@ -33,5 +33,7 @@
   "theme.bar.floating": true,
   "theme.bar.location": "top",
   "bar.autoHide": "fullscreen",
-  "bar.workspaces.numbered_active_indicator": "underline"
+  "bar.workspaces.numbered_active_indicator": "underline",
+  "menus.clock.time.hideSeconds": false,
+  "bar.clock.format": "%a %b %d  %H:%M:%S"
 }
