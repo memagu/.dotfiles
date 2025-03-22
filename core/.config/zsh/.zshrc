@@ -35,6 +35,9 @@ if [[ ! -d "${ZSH_PLUGINS}/zsh-syntax-highlighting" ]]; then
     git clone "https://github.com/zsh-users/zsh-syntax-highlighting.git" "${ZSH_PLUGINS}/zsh-syntax-highlighting"
 fi
 
+# Options
+setopt globdots
+
 # Auto update
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 13
