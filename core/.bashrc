@@ -115,4 +115,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
+. "/home/memagy/.cargo/env"
 . "/home/memagu/.deno/env"

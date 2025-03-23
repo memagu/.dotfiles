@@ -10,5 +10,3 @@ mkdir -p $(dirname "${XDG_CACHE_HOME}")
 
 export ZDOTDIR=${ZDOTDIR:=${XDG_CONFIG_HOME}/zsh}
 
-
-
