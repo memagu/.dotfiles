@@ -1,7 +1,7 @@
 -- Load the nvim-lspconfig plugin
 return {
   "neovim/nvim-lspconfig",
-  
+
   -- List of dependencies required for this configuration
   dependencies = {
     "williamboman/mason.nvim", -- Plugin manager for installing LSP servers
@@ -21,7 +21,7 @@ return {
   -- Main configuration function
   config = function()
     -- Require necessary modules
-    local cmp = require('cmp') -- nvim-cmp module
+    local cmp = require("cmp") -- nvim-cmp module
     local cmp_lsp = require("cmp_nvim_lsp") -- Module for nvim-cmp integration with LSP
     local capabilities = vim.tbl_deep_extend( -- Extend default LSP capabilities
       "force",
@@ -32,6 +32,7 @@ return {
 
     -- Setup fidget.nvim for progress bars
     require("fidget").setup({})
+
     -- Setup mason.nvim for managing LSP servers
     require("mason").setup()
 
@@ -66,23 +67,22 @@ return {
       }
     })
 
-    -- Minimal configuration for nvim-metals
-    local metals_config = require("metals").bare_config()
-    metals_config.capabilities = capabilities
+    -- Custom on_attach
+    vim.api.nvim_create_autocmd("LspAttach", {
+      callback = function(args)
+        local bufnr = args.buf
+        local opts = { buffer = bufnr, remap = false }
 
-    -- Define custom on_attach if needed
-    metals_config.on_attach = function(client, bufnr)
-      -- Additional custom LSP settings, keymaps, etc. for Scala
-    end
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+        vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, opts)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
-    -- Attach Metals for Scala, SBT, and Java file types
-    local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = { "scala", "sc", "sbt" },
-      callback = function()
-        require("metals").initialize_or_attach(metals_config)
+        vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+        vim.keymap.set("n", "<leader>wd", vim.lsp.buf.document_symbol, opts)
       end,
-      group = nvim_metals_group,
     })
 
     -- Define select behavior for completion items
