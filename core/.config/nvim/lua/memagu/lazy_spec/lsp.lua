@@ -14,8 +14,6 @@ return {
     "L3MON4D3/LuaSnip", -- Snippet engine
     "saadparwaiz1/cmp_luasnip", -- Integration between nvim-cmp and LuaSnip
     "j-hui/fidget.nvim", -- Progress bar for long-running LSP operations
-    "scalameta/nvim-metals", -- Metals LSP for Scala
-    "nvim-lua/plenary.nvim", -- Dependency required for nvim-metals
   },
 
   -- Main configuration function
