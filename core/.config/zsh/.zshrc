@@ -75,6 +75,6 @@ alias discord='/usr/bin/discord --enable-features=UseOzonePlatform --ozone-platf
 alias spotify='/usr/bin/spotify --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 # Deno
-. "/home/memagu/.deno/env"
+[[ ! -f '/home/memagu/.deno/env' ]] || . "/home/memagu/.deno/env"
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/memagu/.config/zsh/completions:"* ]]; then export FPATH="/home/memagu/.config/zsh/completions:$FPATH"; fi
