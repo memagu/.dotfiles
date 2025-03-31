@@ -35,5 +35,6 @@
   "bar.autoHide": "fullscreen",
   "bar.workspaces.numbered_active_indicator": "underline",
   "menus.clock.time.hideSeconds": false,
-  "bar.clock.format": "%a %b %d  %H:%M:%S"
+  "bar.clock.format": "%a %b %d  %H:%M:%S",
+  "menus.dashboard.powermenu.avatar.image": "/home/memagu/Pictures/screenshots/2025-03-24-111925_hyprshot.png"
 }
