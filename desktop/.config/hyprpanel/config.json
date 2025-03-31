@@ -36,5 +36,11 @@
   "bar.workspaces.numbered_active_indicator": "underline",
   "menus.clock.time.hideSeconds": false,
   "bar.clock.format": "%a %b %d  %H:%M:%S",
-  "menus.dashboard.powermenu.avatar.image": "/home/memagu/Pictures/screenshots/2025-03-24-111925_hyprshot.png"
+  "menus.dashboard.powermenu.avatar.image": "/home/memagu/Pictures/screenshots/2025-03-24-111925_hyprshot.png",
+  "menus.dashboard.directories.left.directory1.label": "󰉍  Downloads",
+  "menus.dashboard.directories.left.directory2.label": "󰉏  Videos",
+  "menus.dashboard.directories.left.directory3.label": "󰚝  Projects",
+  "menus.dashboard.directories.right.directory1.label": "󱧶  Documents",
+  "menus.dashboard.directories.right.directory2.label": "󰉏  Pictures",
+  "menus.dashboard.directories.right.directory3.label": "󱂵  Home"
 }
