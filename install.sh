@@ -32,9 +32,9 @@ stow --adopt -t "$USER_HOME" core
 git reset --hard &> /dev/null
 
 echo "Installing additional packages..."
-apt install -y -qq gcc neovim npm tmux unzip wget xdg-user-dirs zsh
+apt install -y -qq gcc neovim npm tmux unzip wget xdg-user-dirs fish
 
 echo "Setting up user directories..."
 sudo -u "$SUDO_USER" xdg-user-dirs-update
 
-echo "Done! please run zsh"
+echo "Done! please run fish"
