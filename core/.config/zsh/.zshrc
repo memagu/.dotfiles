@@ -5,6 +5,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 export ZSH="$ZDOTDIR/.oh-my-zsh"
 
@@ -78,3 +79,4 @@ alias spotify='/usr/bin/spotify --enable-features=UseOzonePlatform --ozone-platf
 [[ ! -f '/home/memagu/.deno/env' ]] || . "/home/memagu/.deno/env"
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/memagu/.config/zsh/completions:"* ]]; then export FPATH="/home/memagu/.config/zsh/completions:$FPATH"; fi
+

@@ -29,3 +29,4 @@ fi
 . "/home/memagu/.cargo/env"
 . "/home/memagu/.deno/env"
 export PATH="$PATH:/home/memagu/.local/share/coursier/bin"
+. "$HOME/.cargo/env"

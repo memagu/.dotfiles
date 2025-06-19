@@ -117,3 +117,4 @@ fi
 
 . "/home/memagy/.cargo/env"
 . "/home/memagu/.deno/env"
+. "$HOME/.cargo/env"
