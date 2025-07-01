@@ -1,3 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # git prompt info
+    set -g __fish_git_prompt_show_informative_status true
+    set -g __fish_git_prompt_showcolorhints true
 end
