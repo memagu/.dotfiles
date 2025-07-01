@@ -42,5 +42,8 @@
   "menus.dashboard.directories.left.directory3.label": "󰚝  Projects",
   "menus.dashboard.directories.right.directory1.label": "󱧶  Documents",
   "menus.dashboard.directories.right.directory2.label": "󰉏  Pictures",
-  "menus.dashboard.directories.right.directory3.label": "󱂵  Home"
+  "menus.dashboard.directories.right.directory3.label": "󱂵  Home",
+  "bar.customModules.storage.paths": [
+    "/"
+  ]
 }
