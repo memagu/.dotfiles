@@ -1,0 +1,107 @@
+* {
+  font-family: Jetbrains Mono Nerd Font;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  border-radius: 1rem;
+  margin: 10px 10px 0 10px;
+  background: rgba(19, 17, 24, 0.6);
+}
+
+#custom-separator {
+  color: #9966cc;
+  margin: 0;
+  padding: 0;
+}
+
+.module {
+  color: #f18fb0;
+  border-radius: 1rem;
+  padding: 0 1rem;
+}
+
+.module:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 100ms ease-in-out;
+}
+
+tooltip {
+  background: rgba(19, 17, 24, 0.8);
+}
+
+tooltip * {
+  color: #f1c4e0;
+}
+
+#workspaces {
+  background: transparent;
+  padding: 0;
+}
+
+#workspaces button {
+  color: #f18fb0;
+  border: 4px solid transparent;
+  border-radius: 1rem;
+  padding: 0 1rem;
+}
+
+#workspaces button.active {
+  color: #ff4971;
+  background: rgba(0, 0, 0, 0.2);
+  border: 4px solid #f280a1;
+}
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inherit;
+  text-shadow: inherit;
+  transition: all 100ms ease-in-out;
+}
+
+#tray > * {
+    background: transparent;
+}
+
+#tray menu {
+  color: #f1c4e0;
+  background: rgba(19, 17, 24, 0.8);
+}
+
+#custom-music {
+    color: #bd93f9;
+}
+
+#clock {
+  color: #f1c4e0;
+}
+
+#pulseaudio {
+    color: #bd93f9;
+}
+
+#battery {
+  color: #a6d189;
+}
+
+#battery.charging {
+  color: #a6d189;
+}
+
+#battery.warning:not(.charging) {
+  color: #f18fb0;
+}
+
+#battery.critical:not(.charging) {
+  color: #b52a5b;
+}
+
+#network {
+    color: #8897f4;
+}
+

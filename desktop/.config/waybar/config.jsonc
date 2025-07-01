@@ -1,0 +1,165 @@
+{
+  "layer": "top",
+  "position": "top",
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/separator",
+    "tray",
+    "custom/separator",
+    "custom/music"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "pulseaudio",
+    "custom/separator",
+    "backlight",
+    "custom/separator",
+    "battery",
+    "custom/separator",
+    "custom/hypridle",
+    "custom/separator",
+    "network",
+    "custom/separator",
+    "cpu",
+    "custom/separator",
+    "memory"
+  ],
+
+  "custom/separator": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "󰈹",
+      "3": "",
+      "9": "",
+      "10": "",
+      "default": "󰣇"
+    }
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+    "show-passive-items": true
+  },
+
+  "custom/music": {
+    "escape": true,
+    "interval": 1,
+    "exec": "playerctl metadata --format=' {{ artist }} - {{ title }}' 2> /dev/null || echo 󰝛",
+    "on-click": "playerctl play-pause",
+    "max-length": 32 
+  },
+
+  "clock": {
+    "timezone": "Europe/Stockholm",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%Y/%m/%d - %H:%M:%S}",
+    "interval": 1
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "backlight": {
+	"format": "{percent}% {icon}",
+	"format-icons": [
+      "󰹐",
+      "󱩎",
+      "󱩏",
+      "󱩐",
+      "󱩑",
+      "󱩒",
+      "󱩓",
+      "󱩔",
+      "󱩕",
+      "󱩖", 
+      "󰛨"
+    ]
+  },
+
+  "battery": {
+    "interval": 1,
+    "states": {
+        "warning": 20,
+        "critical": 10
+    },
+    "format": "{capacity}% {icon}",
+    "format-alt": "{time} {icon}",
+	"format-icons": {
+      "default": [
+        "󰂎",
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂁",
+        "󰂁",
+        "󰂂", 
+        "󰁹"
+      ],
+      "charging": [
+        "󰢟",
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋", 
+        "󰂅"
+      ]
+    }
+  },
+
+  "custom/hypridle": {
+    "format": "{text}",
+    "exec": "if pgrep -x hypridle > /dev/null; then echo '󰒲'; else echo '󰒳'; fi",
+    "interval": 1,
+    "tooltip": false
+  },
+
+  "network": {
+    "format-wifi": "󰤢 {essid}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰕑",
+    "interval": 1,
+    "tooltip": true,
+    "tooltip-format": "Signal: {signalStrength}% | Down: {bandwidthDownBits} | Up: {bandwidthUpBits}\n{ifname}: {ipaddr}/{cidr}  {gwaddr}",
+    "on-click": "kitty nmtui"
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+  },
+
+  "memory": {
+    "interval": 1,
+    "format": "  {used:0.1f}GiB/{total:0.1f}GiB",
+    "tooltip-format": "󰾴 {swapUsed:0.1f}GiB/{swapTotal:0.1f}GiB"
+  }
+}
+
