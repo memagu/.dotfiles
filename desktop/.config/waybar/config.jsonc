@@ -58,8 +58,9 @@
     "escape": true,
     "interval": 1,
     "exec": "playerctl metadata --format=' {{ artist }} - {{ title }}' 2> /dev/null || echo 󰝛",
-    "on-click": "playerctl play-pause",
-    "max-length": 32 
+    "max-length": 32, 
+    "tooltip-format": "Click to toggle play/pause!",
+    "on-click": "playerctl play-pause"
   },
 
   "clock": {
@@ -92,7 +93,8 @@
       "󱩕",
       "󱩖", 
       "󰛨"
-    ]
+    ],
+    "tooltip-format": "Let there be light!"
   },
 
   "battery": {
@@ -137,17 +139,22 @@
     "format": "{text}",
     "exec": "if pgrep -x hypridle > /dev/null; then echo '󰒲'; else echo '󰒳'; fi",
     "interval": 1,
-    "tooltip": false
+    "tooltip-format": "Click to toggle!",
+    "on-click": "$XDG_CONFIG_HOME/hypr/scripts/toggle-hypridle.sh"
   },
 
   "network": {
-    "format-wifi": "󰤢 {essid}",
+    "format-wifi": "{signalStrength}%  {essid}",
     "format-ethernet": "󰈀",
-    "format-disconnected": "󰕑",
+    "format-linked": "󰌘",
+    "format-disconnected": "󰌙",
+    "format-disabled": "󰕑",
+    "max-length": 12,
     "interval": 1,
     "tooltip": true,
-    "tooltip-format": "Signal: {signalStrength}% | Down: {bandwidthDownBits} | Up: {bandwidthUpBits}\n{ifname}: {ipaddr}/{cidr}  {gwaddr}",
-    "on-click": "kitty nmtui"
+    "tooltip-format": " {bandwidthDownBits} |  {bandwidthUpBits}\n {ifname}: {ipaddr}/{cidr}  {gwaddr}",
+    "tooltip-format-wifi": " {essid} |  {bandwidthDownBits} |  {bandwidthUpBits}\n {ifname}: {ipaddr}/{cidr}  {gwaddr}",
+    "on-click": "kitty --class nmwui nmtui"
   },
 
   "cpu": {

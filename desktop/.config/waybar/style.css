@@ -105,3 +105,8 @@ tooltip * {
     color: #8897f4;
 }
 
+#network.disconnected,
+#network.disabled {
+    color: #f1c4e0
+}
+
