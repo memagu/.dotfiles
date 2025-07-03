@@ -1,6 +1,6 @@
 * {
   font-family: Jetbrains Mono Nerd Font;
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
   padding: 0;
   background: transparent;
@@ -12,12 +12,6 @@
   border-radius: 1rem;
   margin: 10px 10px 0 10px;
   background: rgba(19, 17, 24, 0.6);
-}
-
-#custom-separator {
-  color: #9966cc;
-  margin: 0;
-  padding: 0;
 }
 
 .module {
@@ -35,9 +29,17 @@ tooltip {
   background: rgba(19, 17, 24, 0.8);
 }
 
-tooltip * {
+tooltip label {
   color: #f1c4e0;
 }
+
+#custom-separator {
+  color: #9966cc;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
 
 #workspaces {
   background: transparent;
@@ -73,40 +75,49 @@ tooltip * {
   background: rgba(19, 17, 24, 0.8);
 }
 
-#custom-music {
+#custom-music,
+#pulseaudio,
+#network,
+#bluetooth {
     color: #bd93f9;
 }
 
-#clock {
+#clock,
+#network.connected,
+#network.disabled,
+#bluetooth.off,
+#bluetooth.disabled, 
+#bluetooth.no-controller {
   color: #f1c4e0;
-}
-
-#pulseaudio {
-    color: #bd93f9;
-}
-
-#battery {
-  color: #a6d189;
-}
-
-#battery.charging {
-  color: #a6d189;
-}
-
-#battery.warning:not(.charging) {
-  color: #f18fb0;
-}
-
-#battery.critical:not(.charging) {
-  color: #b52a5b;
-}
-
-#network {
-    color: #8897f4;
 }
 
 #network.disconnected,
 #network.disabled {
     color: #f1c4e0
+}
+
+#custom-pacman {
+    color: #edd151;
+}
+
+#battery,
+#disk,
+#cpu,
+#memory {
+  color: #a6d189;
+}
+
+#battery.warning:not(.charging),
+#disk.moderate,
+#cpu.moderate,
+#memory.moderate {
+    color: #f18fb0;
+}
+
+#battery.critical:not(.charging),
+#disk.high,
+#cpu.high,
+#memory.high {
+  color: #b52a5b;
 }
 

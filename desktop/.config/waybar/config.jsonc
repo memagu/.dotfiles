@@ -1,172 +1,225 @@
 {
-  "layer": "top",
-  "position": "top",
+    "layer": "top",
+    "position": "top",
 
-  "modules-left": [
-    "hyprland/workspaces",
-    "custom/separator",
-    "tray",
-    "custom/separator",
-    "custom/music"
-  ],
-
-  "modules-center": [
-    "clock"
-  ],
-
-  "modules-right": [
-    "pulseaudio",
-    "custom/separator",
-    "backlight",
-    "custom/separator",
-    "battery",
-    "custom/separator",
-    "custom/hypridle",
-    "custom/separator",
-    "network",
-    "custom/separator",
-    "cpu",
-    "custom/separator",
-    "memory"
-  ],
-
-  "custom/separator": {
-    "format": "|",
-    "interval": "once",
-    "tooltip": false
-  },
-
-  "hyprland/workspaces": {
-    "format": "{name}: {icon}",
-    "format-icons": {
-      "1": "",
-      "2": "󰈹",
-      "3": "",
-      "9": "",
-      "10": "",
-      "default": "󰣇"
-    }
-  },
-
-  "tray": {
-    "icon-size": 18,
-    "spacing": 10,
-    "show-passive-items": true
-  },
-
-  "custom/music": {
-    "escape": true,
-    "interval": 1,
-    "exec": "playerctl metadata --format=' {{ artist }} - {{ title }}' 2> /dev/null || echo 󰝛",
-    "max-length": 32, 
-    "tooltip-format": "Click to toggle play/pause!",
-    "on-click": "playerctl play-pause"
-  },
-
-  "clock": {
-    "timezone": "Europe/Stockholm",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%Y/%m/%d - %H:%M:%S}",
-    "interval": 1
-  },
-
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "",
-    "format-icons": {
-      "default": ["", "", " "]
-    },
-    "on-click": "pavucontrol"
-  },
-
-  "backlight": {
-	"format": "{percent}% {icon}",
-	"format-icons": [
-      "󰹐",
-      "󱩎",
-      "󱩏",
-      "󱩐",
-      "󱩑",
-      "󱩒",
-      "󱩓",
-      "󱩔",
-      "󱩕",
-      "󱩖", 
-      "󰛨"
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/separator",
+        "tray",
+        "custom/separator",
+        "custom/music"
     ],
-    "tooltip-format": "Let there be light!"
-  },
 
-  "battery": {
-    "interval": 1,
-    "states": {
-        "warning": 20,
-        "critical": 10
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "pulseaudio",
+        "custom/separator",
+        "backlight",
+        "custom/hypridle",
+        "custom/separator",
+        "network",
+        "bluetooth",
+        "custom/separator",
+        "custom/pacman",
+        "battery",
+        "disk",
+        "cpu",
+        "memory"
+    ],
+
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
     },
-    "format": "{capacity}% {icon}",
-    "format-alt": "{time} {icon}",
-	"format-icons": {
-      "default": [
-        "󰂎",
-        "󰁺",
-        "󰁻",
-        "󰁼",
-        "󰁽",
-        "󰁾",
-        "󰁿",
-        "󰂁",
-        "󰂁",
-        "󰂂", 
-        "󰁹"
-      ],
-      "charging": [
-        "󰢟",
-        "󰢜",
-        "󰂆",
-        "󰂇",
-        "󰂈",
-        "󰢝",
-        "󰂉",
-        "󰢞",
-        "󰂊",
-        "󰂋", 
-        "󰂅"
-      ]
+
+    "hyprland/workspaces": {
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "1": "",
+            "2": "󰈹",
+            "3": "",
+            "9": "",
+            "10": "",
+            "default": "󰣇"
+        }
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10,
+        "show-passive-items": true
+    },
+
+    "custom/music": {
+        "escape": true,
+        "interval": 5,
+        "exec": "playerctl metadata --format=' {{ artist }} - {{ title }}' 2> /dev/null || echo 󰝛",
+        "max-length": 32, 
+        "tooltip-format": "Click to toggle play/pause!",
+        "on-click": "playerctl play-pause"
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%Y-%m-%d / %H:%M:%S}",
+        "interval": 1
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume:>3}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "kitty --class tui-applet wiremix"
+    },
+
+    "backlight": {
+        "format": "{percent:>3}% {icon}",
+        "format-icons": [
+            "󰹐",
+            "󱩎",
+            "󱩏",
+            "󱩐",
+            "󱩑",
+            "󱩒",
+            "󱩓",
+            "󱩔",
+            "󱩕",
+            "󱩖", 
+            "󰛨"
+        ],
+        "tooltip-format": "Let there be light!"
+    },
+
+    "custom/hypridle": {
+        "exec": "if pgrep -x hypridle > /dev/null; then echo '󰒲'; else echo '󰒳'; fi",
+        "interval": 2,
+        "tooltip-format": "Click to toggle Hypridle!",
+        "on-click": "$XDG_CONFIG_HOME/hypr/scripts/toggle-hypridle.sh"
+    },
+
+    "network": {
+        "format-wifi": "{signalStrength:>3}%  {essid}",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰌘",
+        "format-disconnected": "󰌙",
+        "format-disabled": "󰕑",
+        "max-length": 14,
+        "tooltip": true,
+        "tooltip-format": " {bandwidthDownBits} |  {bandwidthUpBits}\n {ifname}: {ipaddr}/{cidr}  {gwaddr}",
+        "tooltip-format-wifi": " {essid} |  {bandwidthDownBits} |  {bandwidthUpBits}\n {ifname}: {ipaddr}/{cidr}  {gwaddr}",
+        "on-click": "kitty --class tui-applet nmtui"
+    },
+
+    "bluetooth": {
+        "format-connected": "󰂯 {device_alias}",
+        "format-on": "󰂱",
+        "format-off": "󰂲",
+        "format-disabled": "󰂲",
+        "format-no-controller": "",
+        "format-icons": [
+            "󰤾",
+            "󰤿",
+            "󰥀",
+            "󰥁",
+            "󰥂",
+            "󰥃",
+            "󰥄",
+            "󰥅",
+            "󰥆",
+            "󰥈", 
+        ],
+        "max-length": 14,
+        "tooltip-format-connected": "{device_battery_percentage} {icon} {device_alias}\n {controller_alias}: {controller_address}",
+        "tooltip-format-on": " {controller_alias}: {controller_address}",
+        "tooltip-format-off": " {controller_alias}: {controller_address}",
+        "tooltip-format-disabled": " {controller_alias}: {controller_address}",
+        "on-click": "kitty --class tui-applet bluetuith"
+    },
+
+    "custom/pacman": {
+        "interval": 300,
+        "tooltip-format": "Click to update {} packages!",
+        "exec": "updates=$(checkupdates 2>/dev/null) && echo 󰮯 $(echo \"$updates\" | wc -l)",
+        "on-click": "paru --sudo pkexec -Syu --noconfirm"
+    },
+
+    "battery": {
+        "interval": 30,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity:>3}% {icon}",
+        "format-alt": "{time} {icon}",
+        "format-icons": {
+            "default": [
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂁",
+                "󰂁",
+                "󰂂", 
+                "󰁹"
+            ],
+            "charging": [
+                "󰢟",
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋", 
+                "󰂅"
+            ]
+        }
+    },
+
+    "disk": {
+        "interval": 5,
+        "format": " {percentage_used:>3}%",
+        "states": {
+            "moderate": 70,
+            "high": 90
+        },
+        "on-click": "kitty --class tui-applet htop -s IO_RATE"
+    },
+
+    "cpu": {
+        "interval": 5,
+        "states": {
+            "moderate": 70,
+            "high": 90
+        },
+        "format": " {usage:>3}%",
+        "on-click": "kitty --class tui-applet htop -s PERCENT_CPU"
+    },
+
+    "memory": {
+        "interval": 5,
+        "states": {
+            "moderate": 70,
+            "high": 90
+        },
+        "format": " {percentage:>3}%",
+        "tooltip-format": " {used:0.1f}GiB/{total:0.1f}GiB\n󰾴 {swapUsed:0.1f}GiB/{swapTotal:0.1f}GiB",
+        "on-click": "kitty --class tui-applet htop -s PERCENT_MEM"
     }
-  },
-
-  "custom/hypridle": {
-    "format": "{text}",
-    "exec": "if pgrep -x hypridle > /dev/null; then echo '󰒲'; else echo '󰒳'; fi",
-    "interval": 1,
-    "tooltip-format": "Click to toggle!",
-    "on-click": "$XDG_CONFIG_HOME/hypr/scripts/toggle-hypridle.sh"
-  },
-
-  "network": {
-    "format-wifi": "{signalStrength}%  {essid}",
-    "format-ethernet": "󰈀",
-    "format-linked": "󰌘",
-    "format-disconnected": "󰌙",
-    "format-disabled": "󰕑",
-    "max-length": 12,
-    "interval": 1,
-    "tooltip": true,
-    "tooltip-format": " {bandwidthDownBits} |  {bandwidthUpBits}\n {ifname}: {ipaddr}/{cidr}  {gwaddr}",
-    "tooltip-format-wifi": " {essid} |  {bandwidthDownBits} |  {bandwidthUpBits}\n {ifname}: {ipaddr}/{cidr}  {gwaddr}",
-    "on-click": "kitty --class nmwui nmtui"
-  },
-
-  "cpu": {
-    "interval": 1,
-    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-  },
-
-  "memory": {
-    "interval": 1,
-    "format": "  {used:0.1f}GiB/{total:0.1f}GiB",
-    "tooltip-format": "󰾴 {swapUsed:0.1f}GiB/{swapTotal:0.1f}GiB"
-  }
 }
 
