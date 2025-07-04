@@ -139,7 +139,7 @@
             "󰥈", 
         ],
         "max-length": 14,
-        "tooltip-format-connected": "{device_battery_percentage} {icon} {device_alias}\n {controller_alias}: {controller_address}",
+        "tooltip-format-connected": "{device_battery_percentage}% {icon} {device_alias}\n {controller_alias}: {controller_address}",
         "tooltip-format-on": " {controller_alias}: {controller_address}",
         "tooltip-format-off": " {controller_alias}: {controller_address}",
         "tooltip-format-disabled": " {controller_alias}: {controller_address}",
