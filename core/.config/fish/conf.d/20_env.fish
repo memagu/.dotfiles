@@ -10,8 +10,8 @@ else
 end
 
 # Rust environment
-if test -f $HOME/.cargo/env
-    sh $HOME/.cargo/env
+if test -f $HOME/.cargo/env.fish
+    source "$HOME/.cargo/env.fish"
 end
 
 # Deno environment
