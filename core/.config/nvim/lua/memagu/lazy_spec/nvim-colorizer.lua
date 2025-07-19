@@ -8,7 +8,7 @@ return {
             tailwind_opts = { update_names = true },
             sass = { enable = true, parsers = { "css" } },
             mode = "virtualtext",
-            virtualtext_inline = true,
+            virtualtext_inline = "before",
         }
     }
 }
