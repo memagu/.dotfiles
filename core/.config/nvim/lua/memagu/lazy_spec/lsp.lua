@@ -38,10 +38,8 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "bashls",
-        "clangd",
+        "fish_lsp",
         "lua_ls",
-        "remark_ls",
-        "pyright"
       },
       handlers = {
         function(server_name)
