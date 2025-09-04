@@ -1,0 +1,8 @@
+default-timeout=5000
+
+background-color=#292929
+border-radius=10
+border-size=4
+border-color=#f280a2
+
+font=Iosevka Nerd Font Mono
