@@ -22,7 +22,7 @@ while true; do
     if [ "$status" = "Discharging" ]; then
         if [ "$percent" -lt "$THRESHOLD_CRITICAL" ]; then
             if [ "$last_state" != 'critical' ]; then
-                hyprctl notify 3 10000 0 "  BATTERY CRITICAL                "
+                notify-send -u critical -t 30000 "BATTERY CRITICAL" "<$THRESHOLD_CRITICAL remaining. Plug in now!"
                 echo 'critical' > "$STATE_FILE"
             fi
             continue
@@ -30,7 +30,7 @@ while true; do
 
         if [ "$percent" -lt "$THRESHOLD_LOW" ]; then
             if [ "$last_state" != 'low' ] && [ "$last_state" != "critical" ]; then
-                hyprctl notify 0 5000 0 "  BATTERY LOW                "
+                notify-send -u critical -t 30000 "BATTERY LOW" "<$THRESHOLD_LOW% remaining"
                 echo 'low' > "$STATE_FILE"
             fi
             continue
