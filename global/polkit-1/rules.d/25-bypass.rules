@@ -1,5 +1,5 @@
 polkit.addRule(function(action, subject) {
-    if (action.id == "org.freedesktop.NetworkManager.policy"
+    if (action.id == "org.freedesktop.NetworkManager.policy") {
         return polkit.Result.YES;
     }
 });
