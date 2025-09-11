@@ -1,0 +1,6 @@
+polkit.addRule(function(action, subject) {
+    if (subject.uid == 0) {
+        return polkit.Result.YES;
+    }
+    return polkit.Result.AUTH_ADMIN_KEEP;
+});
