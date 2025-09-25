@@ -19,3 +19,6 @@ if test -f $HOME/.deno/env
     sh $HOME/.deno/env
 end
 
+# Java environment
+set -x JAVA_HOME /usr/lib/jvm/java-25-openjdk
+
