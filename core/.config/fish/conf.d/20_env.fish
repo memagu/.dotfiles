@@ -20,5 +20,5 @@ if test -f $HOME/.deno/env
 end
 
 # Java environment
-set -x JAVA_HOME /usr/lib/jvm/java-25-openjdk
+set -x JAVA_HOME /usr/lib/jvm/java-21-openjdk
 
