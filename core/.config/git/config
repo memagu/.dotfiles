@@ -1,7 +1,14 @@
 [init]
 	defaultBranch = main
+[core]
+    editor = nvim
 [user]
 	name = Melker Widén
 	email = melker.widen@gmail.com
-[core]
-	editor = nvim
+[pull]
+    rebase = true
+[push]
+    autoSetupRemote = true
+[rebase]
+    autoStash = true
+
