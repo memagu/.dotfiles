@@ -198,7 +198,7 @@
             "moderate": 70,
             "high": 90
         },
-        "on-click": "kitty --class tui-applet htop -s IO_RATE"
+        "on-click": "kitty --class tui-applet btop -p 2"
     },
 
     "cpu": {
@@ -208,7 +208,7 @@
             "high": 90
         },
         "format": " {usage:>3}%",
-        "on-click": "kitty --class tui-applet htop -s PERCENT_CPU"
+        "on-click": "kitty --class tui-applet btop -p 2"
     },
 
     "memory": {
@@ -219,7 +219,7 @@
         },
         "format": " {percentage:>3}%",
         "tooltip-format": " {used:0.1f}GiB/{total:0.1f}GiB\n󰾴 {swapUsed:0.1f}GiB/{swapTotal:0.1f}GiB",
-        "on-click": "kitty --class tui-applet htop -s PERCENT_MEM"
+        "on-click": "kitty --class tui-applet btop -p 2"
     }
 }
 
