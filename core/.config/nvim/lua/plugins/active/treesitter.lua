@@ -1,7 +1,9 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        build = require("nvim-treesitter.install").update({ with_sync = true }),
+        branch = "master",
+        lazy = false,
+        build = ":TSUpdate",
         config = function ()
             local configs = require("nvim-treesitter.configs")
 
@@ -18,7 +20,7 @@ return {
         "nvim-treesitter/nvim-treesitter-context",
         after = "nvim-treesitter",
         config = function()
-            require'treesitter-context'.setup{
+            require('treesitter-context').setup{
                 enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
                 multiwindow = false, -- Enable multiwindow support.
                 max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.

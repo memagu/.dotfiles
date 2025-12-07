@@ -12,6 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "memagu.lazy_spec",
+    spec = "plugins/active",
     change_detection = { notify = false }
 })

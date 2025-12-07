@@ -88,33 +88,21 @@ return {
     cmp.setup({
       snippet = { -- Snippet expansion settings
         expand = function(args)
-          require('luasnip').lsp_expand(args.body) -- Expand snippets using LuaSnip
+          require("luasnip").lsp_expand(args.body) -- Expand snippets using LuaSnip
         end,
       },
       mapping = cmp.mapping.preset.insert({ -- Key mappings for completion
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select), -- Move to previous item
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select), -- Move to next item
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Confirm selection
+        ["<C-N>"] = cmp.mapping.select_prev_item(cmp_select), -- Move to previous item
+        ["<C-n>"] = cmp.mapping.select_next_item(cmp_select), -- Move to next item
+        ["<C-Enter>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
         ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion
       }),
       sources = cmp.config.sources({ -- Sources for autocompletion
-        { name = 'nvim_lsp' }, -- LSP-based completions
-        { name = 'luasnip' }, -- Snippets
+        { name = "nvim_lsp" }, -- LSP-based completions
+        { name = "luasnip" }, -- Snippets
       }, {
-        { name = 'buffer' }, -- Buffer completions
+        { name = "buffer" }, -- Buffer completions
       })
-    })
-
-    -- Configure diagnostic display settings
-    vim.diagnostic.config({
-      float = { -- Settings for floating window diagnostics
-        focusable = false,
-        style = "minimal",
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
-      },
     })
   end
 }
