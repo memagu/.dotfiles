@@ -92,8 +92,8 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({ -- Key mappings for completion
-        ["<C-N>"] = cmp.mapping.select_prev_item(cmp_select), -- Move to previous item
-        ["<C-n>"] = cmp.mapping.select_next_item(cmp_select), -- Move to next item
+        ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select), -- Move to previous item
+        ["<C-j>"] = cmp.mapping.select_next_item(cmp_select), -- Move to next item
         ["<C-Enter>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
         ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion
       }),
