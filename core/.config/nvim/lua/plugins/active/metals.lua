@@ -1,6 +1,9 @@
 return {
     "scalameta/nvim-metals",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "Saghen/blink.cmp"
+    },
     after = "nvim-lspconfig",
     config = function()
         local capabilities = require("blink.cmp").get_lsp_capabilities()

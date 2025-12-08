@@ -1,7 +1,12 @@
 return {
     "saghen/blink.cmp",
-    dependencies = { "L3MON4D3/LuaSnip" }
-    ---@module "blink.cmp"
-    ---@type blink.cmp.Config
+    version = "1.*",
+    dependencies = {
+        { "L3MON4D3/LuaSnip", version = "v2.*" }
+    },
+    opts = {
+        snippets = { preset = "luasnip" },
+        fuzzy = { implementation = "prefer_rust_with_warning" }
+    }
 }
 
