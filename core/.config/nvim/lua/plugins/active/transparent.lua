@@ -3,7 +3,9 @@ return {
     lazy = false,
     priority = 8008135,
     config = function()
-        require("transparent").setup({
+        local transparent = require("transparent")
+
+        transparent.setup({
             groups = {
                 "Normal",
                 "NormalNC",
@@ -47,6 +49,7 @@ return {
             extra_groups = {},
             exclude_groups = {}
         })
+        transparent.toggle(true)
     end
 }
 
