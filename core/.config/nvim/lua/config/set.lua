@@ -17,6 +17,13 @@ vim.opt.expandtab = true
 --     end,
 -- })
 
+vim.opt.listchars:append({
+    space = "·",
+    tab   = "⭲ ",
+    eol = "↲"
+})
+vim.opt.list = false
+
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
