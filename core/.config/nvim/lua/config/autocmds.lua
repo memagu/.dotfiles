@@ -1,3 +1,10 @@
+vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+        vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = "#f280a1" })
+        vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = "#9966cc" })
+    end
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
         local bufnr = args.buf
