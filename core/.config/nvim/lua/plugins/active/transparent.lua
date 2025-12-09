@@ -6,11 +6,12 @@ return {
         local transparent = require("transparent")
 
         transparent.setup({
-            -- extra_groups = {},
             exclude_groups = {
                 "NormalFloat"
             }
         })
+
+        transparent.clear_prefix("TreesitterContext")
 
         transparent.toggle(true)
     end

@@ -9,7 +9,13 @@ return {
     },
 
     config = function()
-        require("fidget").setup()
+        require("fidget").setup({
+            notification = {
+                window = {
+                    winblend = 0  -- transparent background
+                }
+            }
+        })
         require("mason").setup()
 
         local lspconfig = require("lspconfig")
