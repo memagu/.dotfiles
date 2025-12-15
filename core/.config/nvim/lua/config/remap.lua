@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>e", function() vim.cmd.Ex() end)
+vim.keymap.set("n", "<leader>e", function() vim.cmd.Oil() end)
 
 vim.keymap.set("n", "<leader>=", "mtgg=G't")
 
