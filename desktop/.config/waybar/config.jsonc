@@ -150,7 +150,7 @@
         "interval": 300,
         "tooltip-format": "Click to upgrade {} packages!",
         "exec": "updates=$(checkupdates 2>/dev/null) && echo 󰮯 $(echo \"$updates\" | wc -l)",
-        "on-click": "paru --sudo pkexec -Syu --noconfirm"
+        "on-click": "yay --sudo pkexec -Syu --noconfirm"
     },
 
     "battery": {
