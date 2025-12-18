@@ -9,6 +9,9 @@ else
     set -x EDITOR nvim
 end
 
+# simple input method for GTK (basic compose/dead‑keys)
+set -x GTK_IM_MODULE simple
+
 # Rust environment
 if test -f $HOME/.cargo/env.fish
     source "$HOME/.cargo/env.fish"
