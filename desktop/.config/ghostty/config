@@ -1,0 +1,15 @@
+font-family = "Iosevka Nerd Font Mono"
+font-size = 16
+font-feature = -calt,-liga,-dlig
+
+background-opacity = 0.9
+window-padding-x = 4
+window-padding-y = 4
+
+confirm-close-surface = false
+bell-features = no-system
+
+custom-shader = ~/.config/ghostty/shaders/cursor-blaze.glsl
+
+theme = "Rose Pine"
+
