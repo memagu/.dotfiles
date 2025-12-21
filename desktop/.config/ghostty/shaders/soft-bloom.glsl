@@ -29,19 +29,17 @@ const vec3[24] samples = {
   };
 
 const float BASE_STRENGH = 0.2;
-const float STRENGTH = BASE_STRENGH * 0.0625;
+const float STRENGTH = BASE_STRENGH * 0.0625;  // x16 strength reduction
 
 float lum(vec4 c) {
   return 0.299 * c.r + 0.587 * c.g + 0.114 * c.b;
 }
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
-  vec2 uv = fragCoord.xy / iResolution.xy;
+  const vec2 uv = fragCoord.xy / iResolution.xy;
+  const vec2 step = vec2(1.414) / iResolution.xy;
 
   vec4 color = texture(iChannel0, uv);
-
-  vec2 step = vec2(1.414) / iResolution.xy;
-
   for (int i = 0; i < 24; i++) {
     vec3 s = samples[i];
     vec4 c = texture(iChannel0, uv + s.xy * step);
@@ -53,3 +51,4 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
   fragColor = color;
 }
+
