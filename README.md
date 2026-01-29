@@ -46,14 +46,14 @@ Various configuration files
   cd ~/.dotfiles
   ```
 
-+ Adopt existing files for either the `core` or `desktop` package or both:
++ Adopt existing files for either the `core`, `desktop` or `applications` package or some combination of them:
   - core: 
     ```bash
-    stow --adopt -t ~ core
+    stow --adopt -d config -t ~ core
     ```
   - desktop: 
     ```bash
-    stow --adopt t ~ desktop
+    stow --adopt -d config -t ~ desktop
     ```
 
 + Reset all files to match HEAD:
