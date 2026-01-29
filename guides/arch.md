@@ -6,9 +6,9 @@ Keyboard layout:
 Partitions:
 | Mount point on the installed system | Partition | Partition type | Filesystem | Size |
 | ------------- | ------------- | ------------------ | ------ | --- |
-| `/boot` | `/dev/efi_system_partition` | EFI system partition | FAT32 | 2 GiB |
-| `[SWAP]` | `/dev/swap_partition` | EFI system partition | N/A | 1.5 * RAM |
-| `/` | `/dev/root_partition` | EFI system partition | btrfs | Whatever |
+| `/boot` | `/dev/efi_system_partition` | EFI | FAT32 | 2 GiB |
+| `[SWAP]` | `/dev/swap_partition` | Linux wap | N/A | 1.5 * RAM |
+| `/` | `/dev/root_partition` | Linux | btrfs | Whatever |
 
 Subolumes:
 | Mount point on the installed system | Subvolume |
