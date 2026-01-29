@@ -8,7 +8,7 @@ Partitions:
 | ------------- | ------------- | ------------------ | ------ | --- |
 | `/boot` | `/dev/efi_system_partition` | EFI | FAT32 | 2 GiB |
 | `[SWAP]` | `/dev/swap_partition` | Linux wap | N/A | 1.5 * RAM |
-| `/` | `/dev/root_partition` | Linux | btrfs | Whatever |
+| N/A | `/dev/root_partition` | Linux | btrfs | Whatever |
 
 Subolumes:
 | Mount point on the installed system | Subvolume |
