@@ -1,34 +1,68 @@
 # .dotfiles
+
 Various configuration files
 
 ## Installation
-> **_NOTE:_** This guide is meant for Debian but will work on other OS:es with minor modifications.
 
-1. Install git and a dependency for submodules.
-   ```bash
-   sudo apt install -y git gettext
-   ```
+### Prerequisites
 
-2. Clone this repository into your home directory.
-   ```bash
-   git clone --recurse-submodules git@github.com:memagu/.dotfiles.git
-   ```
+- Install [Git](https://git-scm.com/) and [GNU Stow](https://www.gnu.org/software/stow/):
+  - Arch:
+    ```bash
+    sudo pacman -S git stow
+    ```
 
-3. Navigate into the repo and run the following command: 
-   ```bash
-   cd ~/.dotfiles
-   ```
+  - Debian:
+    ```bash
+    sudo apt install git stow
+    ```
 
-4. Run the installation script as root
-   ```bash
-   sudo bash install.sh
-   ```
-   > **_NOTE:_** This will change /etc/apt/sources.list
-    
-5. Run friendly interactive shell
-   ```bash
-   fish
-   ```
+  - Foodora:
+    ```bash
+    sudo dnf install git stow
+    ```
 
-6. Correct mail and name in ~/.config/git/config
+### Download
+
++ Navigate to your home directory:
+  ```bash
+  cd
+  ```
+
++ Download this repo to your home directory:
+  - SSH (recommended):
+    ```bash
+    git clone git@github.com:memagu/.dotfiles.git
+    ```
+  - HTTPS:
+    ```bash
+    git clone https://github.com/memagu/.dotfiles.git
+    ```
+
+### Symlink Configuration Files
+
++ Navigate into the repo: 
+  ```bash
+  cd ~/.dotfiles
+  ```
+
++ Adopt existing files for either the `core` or `desktop` package or both:
+  - core: 
+    ```bash
+    stow --adopt -t ~ core
+    ```
+  - desktop: 
+    ```bash
+    stow --adopt t ~ desktop
+    ```
+
++ Reset all files to match HEAD:
+  ```bash
+  git fetch && git reset --hard origin/main
+  ```
+
++ Make it your own:
+  **This is _IMPORTANT_!!** 
+  - Change name and email address in `core/.config/git/config`.
+  - Change user in `core/.ssh/config` or remove the file altogether.
 
