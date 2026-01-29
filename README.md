@@ -55,6 +55,10 @@ Various configuration files
     ```bash
     stow --adopt -d config -t ~ desktop
     ```
+  - applications: 
+    ```bash
+    stow --adopt -d config -t ~ applications
+    ```
 
 + Reset all files to match HEAD:
   ```bash
