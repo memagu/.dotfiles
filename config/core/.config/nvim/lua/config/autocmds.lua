@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
-        vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = "#f280a1" })
-        vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = "#9966cc" })
+        vim.api.nvim_set_hl(0, "SnacksIndentScope", { fg = "#f280a1" })
+        vim.api.nvim_set_hl(0, "SnacksIndent", { fg = "#9966cc" })
     end
 })
 
@@ -10,15 +10,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local bufnr = args.buf
         local opts = { buffer = bufnr, remap = false }
 
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-        vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, opts)
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
         vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-        vim.keymap.set("n", "<leader>wd", vim.lsp.buf.document_symbol, opts)
     end,
 })
 
@@ -48,5 +42,14 @@ vim.api.nvim_create_autocmd({ 'CursorMoved', 'DiagnosticChanged' }, {
             end
         end
     end,
+})
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "OilActionsPost",
+  callback = function(event)
+      if event.data.actions[1].type == "move" then
+          Snacks.rename.on_rename_file(event.data.actions[1].src_url, event.data.actions[1].dest_url)
+      end
+  end,
 })
 
