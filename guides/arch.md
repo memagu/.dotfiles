@@ -3,14 +3,14 @@
 Keyboard layout:
 `loadkeys sv-latin1`
 
-Partitions:
+Partitions (`fdisk /dev/disk`):
 | Mount point on the installed system | Partition | Partition type | Filesystem | Size |
 | ------------- | ------------- | ------------------ | ------ | --- |
 | `/boot` | `/dev/efi_system_partition` | EFI | FAT32 | 2 GiB |
 | `[SWAP]` | `/dev/swap_partition` | Linux wap | N/A | 1.5 * RAM |
 | N/A | `/dev/root_partition` | Linux | btrfs | Whatever |
 
-Subolumes:
+Subolumes (`btrfs subvol create /mnt/subvol`):
 | Mount point on the installed system | Subvolume |
 | ------------- | ------------- |
 | `/` | `@` | 
@@ -23,5 +23,6 @@ Mount:
 
 Reflector: `reflector -n 20 -c Sweden --sort rate -p http -l 200 --save /etc/pacman.d/mirrorlist`
 
-Pacstrap: `pacstrap -K base base-dvel linux linux-firmware amd-ucode reflector networkmanager fastfetch fish git neovim openssh btrfs-progs man-db man-pages`
+Pacstrap: `pacstrap -K /mnt base base-devel linux linux-firmware amd-ucode grub iwctl sudo reflector networkmanager fastfetch fish git neovim openssh btrfs-progs man-db man-pages`
+
 
