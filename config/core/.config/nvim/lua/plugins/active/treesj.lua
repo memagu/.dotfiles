@@ -6,11 +6,7 @@ return {
   keys = {
     {
       "L",
-      function()
-        require("treesj").toggle({ split = {
-          reqursive = false,
-        } })
-      end,
+      function() require("treesj").toggle({ split = { reqursive = false } }) end,
       desc = "Toggle Line Split",
       mode = { "n", "x" },
     },
