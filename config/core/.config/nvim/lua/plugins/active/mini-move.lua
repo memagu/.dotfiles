@@ -1,6 +1,12 @@
 return {
   "nvim-mini/mini.move",
   version = false,
+  keys = {
+    { "<M-h>", mode = { "n", "v" }, desc = "Move Left" },
+    { "<M-j>", mode = { "n", "v" }, desc = "Move Down" },
+    { "<M-k>", mode = { "n", "v" }, desc = "Move Up" },
+    { "<M-l>", mode = { "n", "v" }, desc = "Move Right" },
+  },
   opts = {
     mappings = {
       -- Move visual selection in Visual mode

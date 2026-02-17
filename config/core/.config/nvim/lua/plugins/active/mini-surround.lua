@@ -1,6 +1,11 @@
 return {
   "nvim-mini/mini.surround",
   version = false,
+  keys = {
+    { "gs", desc = "Add Surrounding", mode = { "n", "v" } },
+    { "ds", desc = "Delete Surrounding" },
+    { "cs", desc = "Replace Surrounding" },
+  },
   opts = function()
     local sr = require("mini.surround")
     local sr_ts = sr.gen_spec.input.treesitter

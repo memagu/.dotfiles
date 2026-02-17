@@ -1,7 +1,7 @@
 return {
   "xiyaowong/transparent.nvim",
   lazy = false,
-  priority = 8008135,
+  priority = 420,
   config = function()
     local transparent = require("transparent")
 

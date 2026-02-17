@@ -1,6 +1,7 @@
 return {
   "nvim-mini/mini.ai",
   version = false,
+  event = "VeryLazy",
   opts = function()
     local ai = require("mini.ai")
     local ai_ts = ai.gen_spec.treesitter
