@@ -29,7 +29,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
 
-vim.opt.updatetime = 165
+vim.opt.updatetime = 50
 
 vim.opt.listchars:append({ space = "·", tab = "⭲ ", eol = "↲" })
 vim.opt.list = false
