@@ -15,6 +15,9 @@ vim.opt.linebreak = true
 vim.opt.breakindent = true
 vim.opt.showbreak = "↪ "
 
+vim.opt.fixendofline = true
+vim.opt.endofline = true
+
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 16
 
