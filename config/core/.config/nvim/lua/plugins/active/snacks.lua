@@ -14,7 +14,9 @@ return {
     rename = {},
     scope = {},
     statuscolumn = {},
-    words = {},
+    words = {
+      debounce = 0,
+    },
   },
   keys = {
     -- Top Pickers & Explorer
