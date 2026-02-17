@@ -1,51 +1,34 @@
 return {
-    "neovim/nvim-lspconfig",
+  "neovim/nvim-lspconfig",
 
-    dependencies = {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "Saghen/blink.cmp",
-        "j-hui/fidget.nvim"
-    },
+  dependencies = {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+  },
 
-    config = function()
-        require("fidget").setup({
-            notification = {
-                window = {
-                    winblend = 0  -- transparent background
-                }
-            }
-        })
-        require("mason").setup()
+  config = function()
+    require("mason").setup()
 
-        local lspconfig = require("lspconfig")
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-        require("mason-lspconfig").setup({
-            ensure_installed = {
-                "bashls",
-                "fish_lsp",
-                "lua_ls",
+    vim.lsp.config("lua_ls", {
+      settings = {
+        Lua = {
+          runtime = { version = "LuaJIT" },
+          workspace = {
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME,
+              vim.fn.stdpath("data") .. "/lazy/snacks.nvim",
             },
-            handlers = {
-                function(server_name)
-                    lspconfig[server_name].setup({ capabilities = capabilities })
-                end,
-                lua_ls = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = { "vim", "it", "describe", "before_each", "after_each" },
-                                }
-                            }
-                        }
-                    }
-                end
-            }
-        })
-    end
-}
+          },
+        },
+      },
+    })
+    vim.lsp.config("denols", { root_markers = { "deno.json" } })
+    vim.lsp.config("ts_ls", { root_markers = { "package.json" }, single_file_support = false })
 
+    require("mason-lspconfig").setup({
+      ensure_installed = { "lua_ls", "bashls", "fish_lsp" },
+      automatic_enable = true,
+    })
+  end,
+}
