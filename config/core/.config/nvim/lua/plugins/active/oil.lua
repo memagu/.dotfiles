@@ -5,7 +5,7 @@ return {
   },
   lazy = false,
   keys = {
-    { "-", "<CMD>Oil<CR>", desc = "Open Parent Directory" },
+    { "<leader>e", function() require("oil").open() end, desc = "Open Parent Directory" },
   },
   opts = {
     skip_confirm_for_simple_edits = true,
