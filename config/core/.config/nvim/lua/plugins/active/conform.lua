@@ -15,6 +15,7 @@ return {
         go = { "goimports", "gofmt" },
         sh = { "shfmt" },
         fish = { "fish_indent" },
+        markdown = { "prettier" },
       },
     })
   end,
