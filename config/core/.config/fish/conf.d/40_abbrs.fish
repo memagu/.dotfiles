@@ -1,5 +1,5 @@
 # Funsies
-abbr -a please 'sudo'
+abbr -a please sudo
 
 # Goto dotfiles
 abbr -a dot 'cd ~/.dotfiles'
@@ -35,7 +35,7 @@ abbr -a gaA 'git add -A'
 abbr -a gai 'git add -p'
 abbr -a grmc 'git rm --cached'
 abbr -a gc 'git commit -m \'\''
-abbr -a gca 'git commit -a -m \'\''
+abbr -a gca 'git commit -am \'\''
 abbr -a goops 'git commit --amend'
 abbr -a gOops 'git commit --amend --no-edit'
 abbr -a gOOPS 'git rebase -i HEAD~16 --committer-date-is-author-date'
@@ -43,7 +43,7 @@ abbr -a gGOOD 'git rebase --continue'
 abbr -a gcp 'git cherry-pick'
 abbr -a gundo 'git reset --soft HEAD^'
 abbr -a gUndo 'git reset --hard HEAD^'
-abbr -a gt 'git tag -a -m \'\''
+abbr -a gt 'git tag -am \'\''
 abbr -a gtd 'git tag -d'
 abbr -a gtpa 'git push origin --tags'
 abbr -a gtl 'git tag -l'
@@ -60,4 +60,3 @@ abbr -a gcla 'git clean -fd'
 abbr -a gclA 'git clean -xfd'
 abbr -a gcln 'git clean -n'
 abbr -a gnuke 'git fetch && git reset --hard origin/main'
-
