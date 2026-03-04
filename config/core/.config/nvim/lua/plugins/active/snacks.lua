@@ -28,6 +28,7 @@ return {
     -- find
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
+    { "<leader>fG", function() Snacks.picker.git_status() end, desc = "Find Git Status Files" },
     { "<leader>fa", function() Snacks.picker.files({ hidden = true, ignored = true }) end, desc = "Find All Files" },
     -- Grep
     { "<leader>sg", function() Snacks.picker.git_grep() end, desc = "Grep Git" },
