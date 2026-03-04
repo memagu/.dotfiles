@@ -34,7 +34,6 @@ return {
 
     require("mason-lspconfig").setup({
       ensure_installed = { "lua_ls", "bashls", "fish_lsp" },
-      automatic_enable = true,
     })
   end,
 }
