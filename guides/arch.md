@@ -11,9 +11,22 @@ Keyboard layout:
 
 ## Locale
 
-1. `echo 'en_DK.UTF-8 UTF-8' >> /etc/locale.gen`
+1. `printf "en_US.UTF-8 UTF-8\nen_SE.UTF-8 UTF-8\n" >> /etc/locale.gen`
 1. `locale-gen`
-1. `echo 'LANG=en_DK.UTF-8' > /etc/locale.conf`
+1. ```
+   cat <<EOF > /etc/locale.conf
+   LANG=en_US.UTF-8
+   LC_ADDRESS=en_SE.UTF-8
+   LC_COLLATE=en_SE.UTF-8
+   LC_IDENTIFICATION=en_SE.UTF-8
+   LC_MEASUREMENT=en_SE.UTF-8
+   LC_MONETARY=en_SE.UTF-8
+   LC_NAME=en_SE.UTF-8
+   LC_PAPER=en_SE.UTF-8
+   LC_TELEPHONE=en_SE.UTF-8
+   LC_TIME=en_SE.UTF-8
+   EOF
+   ```
 
 ## Timezone
 

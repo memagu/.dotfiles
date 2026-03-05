@@ -1,7 +1,3 @@
-# Locale settings
-set -x LANG en_AU.UTF-8
-set -x LC_ALL en_AU.UTF-8
-
 # Editor preference
 if set -q SSH_CONNECTION
     set -x EDITOR vim
@@ -24,4 +20,3 @@ end
 
 # Java environment
 set -x JAVA_HOME /usr/lib/jvm/java-21-openjdk
-
