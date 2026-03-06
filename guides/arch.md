@@ -40,7 +40,7 @@ Keyboard layout:
 | Mount point on the installed system | Partition                   | Partition type | Filesystem | Size       |
 | ----------------------------------- | --------------------------- | -------------- | ---------- | ---------- |
 | `/boot`                             | `/dev/efi_system_partition` | EFI            | FAT32      | 2 GiB      |
-| `[SWAP]`                            | `/dev/swap_partition`       | Linux wap      | N/A        | 1.5 \* RAM |
+| `[SWAP]`                            | `/dev/swap_partition`       | Linux swap     | N/A        | 1.5 \* RAM |
 | N/A                                 | `/dev/root_partition`       | Linux          | btrfs      | Whatever   |
 
 ### Subolumes (`btrfs subvol create /mnt/subvol`):
