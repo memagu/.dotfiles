@@ -8,11 +8,13 @@ Various configuration files
 
 - Install [Git](https://git-scm.com/) and [GNU Stow](https://www.gnu.org/software/stow/):
   - Arch:
+
     ```bash
     sudo pacman -S git stow
     ```
 
   - Debian:
+
     ```bash
     sudo apt install git stow
     ```
@@ -24,12 +26,13 @@ Various configuration files
 
 ### Download
 
-+ Navigate to your home directory:
+- Navigate to your home directory:
+
   ```bash
   cd
   ```
 
-+ Download this repo to your home directory:
+- Download this repo to your home directory:
   - SSH (recommended):
     ```bash
     git clone git@github.com:memagu/.dotfiles.git
@@ -41,32 +44,33 @@ Various configuration files
 
 ### Symlink Configuration Files
 
-+ Navigate into the repo: 
+- Navigate into the repo:
+
   ```bash
   cd ~/.dotfiles
   ```
 
-+ Adopt existing files for either the `core`, `desktop` or `applications` package or some combination of them:
-  - core: 
+- Adopt existing files for either the `core`, `desktop` or `applications` package or some combination of them:
+  - core:
     ```bash
     stow --adopt -d config -t ~ core
     ```
-  - desktop: 
+  - desktop:
     ```bash
     stow --adopt -d config -t ~ desktop
     ```
-  - applications: 
+  - applications:
     ```bash
     stow --adopt -d config -t ~ applications
     ```
 
-+ Reset all files to match HEAD:
+- Reset all files to match HEAD:
+
   ```bash
   git fetch && git reset --hard origin/main
   ```
 
-+ Make it your own:
-  **This is _IMPORTANT_!!** 
-  - Change name and email address in `core/.config/git/config`.
-  - Change user in `core/.ssh/config` or remove the file altogether.
-
+- Make it your own:
+  **This is _IMPORTANT_!!**
+  - Change name and email address in `config/core/.config/git/config`.
+  - Change user in `config/core/.ssh/config` or remove the file altogether.
