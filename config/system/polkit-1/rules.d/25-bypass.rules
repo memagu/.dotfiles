@@ -3,3 +3,10 @@ polkit.addRule(function(action, subject) {
         return polkit.Result.YES;
     }
 });
+
+polkit.addRule(function(action, subject) {
+    if (action.id.startsWith("org.feralinteractive.GameMode.") &&
+        subject.isInGroup("gamemode")) {
+        return polkit.Result.YES;
+    }
+});
