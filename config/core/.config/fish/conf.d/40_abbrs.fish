@@ -12,6 +12,7 @@ for i in (seq 3 10)
 end
 
 # Git stuff
+abbr -a cg 'cd $(git rev-parse --show-toplevel)'
 abbr -a gI 'git init'
 abbr -a gR 'git remote -v'
 abbr -a gRa 'git remote add'
