@@ -1,12 +1,12 @@
 # Editor preference
 if set -q SSH_CONNECTION
-    set -x EDITOR vim
+    set -gx EDITOR vim
 else
-    set -x EDITOR nvim
+    set -gx EDITOR nvim
 end
 
 # simple input method for GTK (basic compose/dead‑keys)
-set -x GTK_IM_MODULE simple
+set -gx GTK_IM_MODULE simple
 
 # Rust environment
 if test -f $HOME/.cargo/env.fish
@@ -19,4 +19,4 @@ if test -f $HOME/.deno/env
 end
 
 # Java environment
-set -x JAVA_HOME /usr/lib/jvm/java-21-openjdk
+set -gx JAVA_HOME /usr/lib/jvm/java-21-openjdk

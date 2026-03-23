@@ -13,4 +13,3 @@ fish_add_path --prepend $HOME/.local/bin
 # Tools
 fish_add_path --prepend $HOME/.cargo/bin
 fish_add_path --prepend $HOME/.local/share/coursier/bin
-
