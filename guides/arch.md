@@ -60,4 +60,4 @@ Keyboard layout:
 
 1. **Mirrors**: `reflector -n 20 -c Sweden --sort rate -p http -l 200 --save /etc/pacman.d/mirrorlist`
 1. **Keyring**: `pacman -Sy archlinux-keyring`
-1. **Pacstrap**: `pacstrap -K /mnt base base-devel linux linux-firmware amd-ucode grub iwctl sudo reflector networkmanager fastfetch fish git neovim openssh btrfs-progs man-db man-pages`
+1. **Pacstrap**: `pacstrap -K /mnt base base-devel linux linux-firmware amd-ucode grub iwctl sudo reflector networkmanager fastfetch fish zoxide git neovim openssh btrfs-progs man-db man-pages`
