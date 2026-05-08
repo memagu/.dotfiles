@@ -15,6 +15,41 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("TreesitterSetup", { clear = true }),
+  callback = function(event)
+    local bufnr = event.buf
+    local ft = vim.bo[bufnr].filetype
+    local lang = vim.treesitter.language.get_lang(ft) or ft
+
+    local ok, parsers = pcall(require, "nvim-treesitter.parsers")
+    if not ok or not parsers[lang] then
+      return
+    end
+
+    local ok, treesitter = pcall(require, "nvim-treesitter")
+    if not ok then
+      return
+    end
+
+    treesitter.install({ lang }):await(function(err)
+      if err then
+        vim.notify("Treesitter failed to install parser for filetype:  " .. ft .. ". " .. err)
+        return
+      end
+      if not vim.api.nvim_buf_is_valid(bufnr) then
+        return
+      end
+
+      vim.treesitter.start(bufnr, lang)
+      vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+      vim.wo[0][0].foldmethod = "expr"
+      vim.wo[0][0].foldlevel = 1337
+      vim.bo[bufnr].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end)
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "CursorMoved", "DiagnosticChanged" }, {
   desc = "Disable diagnostic.virtual_text on cursor line",
   group = vim.api.nvim_create_augroup("diagnostic_virtual_text_hide", { clear = true }),
