@@ -1,12 +1,17 @@
-polkit.addRule(function(action, subject) {
-    if (action.id.startsWith("org.freedesktop.NetworkManager")) {
-        return polkit.Result.YES;
-    }
-});
+var actions = [
+    "org.freedesktop.NetworkManager.",
+    "org.freedesktop.udisks2.",
+    "org.freedesktop.login1."
+];
 
-polkit.addRule(function(action, subject) {
-    if (action.id.startsWith("org.feralinteractive.GameMode.") &&
-        subject.isInGroup("gamemode")) {
+for (var i = 0; i < actions.length; i++) {
+    if (!action.id.startsWith(actions[i])) {
+        continue;
+    }
+
+    if (subject.local && subject.active && subject.isInGroup("wheel")) {
         return polkit.Result.YES;
     }
-});
+    
+    break;
+}
