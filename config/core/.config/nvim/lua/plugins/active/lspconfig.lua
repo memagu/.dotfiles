@@ -31,6 +31,16 @@ return {
     })
     vim.lsp.config("denols", { root_markers = { "deno.json" } })
     vim.lsp.config("ts_ls", { root_markers = { "package.json" }, single_file_support = false })
+    vim.lsp.config("hls", {
+      cmd = { "haskell-language-server-wrapper", "--lsp" },
+      root_markers = { "stack.yaml", "hie.yaml", "package.yaml" },
+      settings = {
+        haskell = {
+          formattingProvider = "ormolu",
+          checkProject = true,
+        },
+      },
+    })
 
     require("mason-lspconfig").setup({
       ensure_installed = { "lua_ls", "bashls", "fish_lsp" },
