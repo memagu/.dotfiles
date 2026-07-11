@@ -3,5 +3,9 @@ return {
   version = "*",
   dependencies = "saghen/blink.download",
   event = "BufReadPost",
-  opts = {},
+  opts = {
+    mappings = {
+      enabled = false,
+    },
+  },
 }
