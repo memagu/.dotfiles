@@ -3,7 +3,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("hyprlauncher -d")
-	hl.exec_cmd("$XDG_CONFIG_HOME/hypr/scripts/battery-notifications.sh")
+	hl.exec_cmd("$HOME/.local/bin/battery-notifications.sh")
 
 	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
 end)

@@ -150,7 +150,7 @@
         "interval": 300,
         "tooltip-format": "Click to upgrade {} packages!",
         "exec": "total=$(($(checkupdates 2>/dev/null | wc -l) + $(paru -Qua 2>/dev/null | wc -l))); [[ $total -gt 0 ]] && echo 󰮯 $total",
-        "on-click": "paru --sudo \"$XDG_CONFIG_HOME/hypr/scripts/pkexec-sudo.sh\" --noconfirm --noprogressbar --removemake --cleanafter -Syu"
+        "on-click": "paru --sudo \"$HOME/.local/bin/pkexec-sudo.sh\" --noconfirm --noprogressbar --removemake --cleanafter -Syu"
     },
 
     "battery": {
