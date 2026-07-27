@@ -7,8 +7,8 @@
 ----------------
 
 hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
-hl.curve("workspaceSpring", { type = "spring", mass = 1, stiffness = 100, dampening = 14 })
-hl.curve("windowSpring", { type = "spring", mass = 1, stiffness = 180, dampening = 16 })
+hl.curve("workspaceSpring", { type = "spring", mass = 1, stiffness = 400, dampening = 32 })
+hl.curve("windowSpring", { type = "spring", mass = 1, stiffness = 500, dampening = 38 })
 
 --------------------
 ---- WORKSPACES ----
