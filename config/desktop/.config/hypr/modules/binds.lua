@@ -36,7 +36,7 @@ hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }), { description = "f
 for i = 1, 10 do
 	local key = i % 10
 	hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, silent = true }))
+	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 ---------------------------
@@ -46,7 +46,7 @@ end
 hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"), { description = "toggle special workspace" })
 hl.bind(
 	"SUPER + SHIFT + S",
-	hl.dsp.window.move({ workspace = "special:magic", silent = true }),
+	hl.dsp.window.move({ workspace = "special:magic", follow = false }),
 	{ description = "move to special workspace" }
 )
 
