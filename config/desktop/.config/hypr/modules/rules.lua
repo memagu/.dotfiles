@@ -10,7 +10,7 @@ hl.window_rule({ match = { class = "^(com.mitchellh.ghostty)$" }, workspace = 1 
 hl.window_rule({ match = { class = "^(librewolf)$" }, workspace = 2 })
 hl.window_rule({ match = { class = "^(discord)$" }, workspace = 3 })
 hl.window_rule({ match = { class = "^(steam)$" }, workspace = 9 })
-hl.window_rule({ match = { class = "^(spotify)$" }, workspace = 10 })
+hl.window_rule({ match = { class = "^(Spotify)$" }, workspace = 10 })
 
 ---------------------
 ---- WINDOW RULES ----
