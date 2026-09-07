@@ -61,3 +61,17 @@ Keyboard layout:
 1. **Mirrors**: `reflector -n 20 -c Sweden --sort rate -p http -l 200 --save /etc/pacman.d/mirrorlist`
 1. **Keyring**: `pacman -Sy archlinux-keyring`
 1. **Pacstrap**: `pacstrap -K /mnt base base-devel linux linux-firmware amd-ucode grub iwctl sudo reflector networkmanager fastfetch fish zoxide git neovim openssh btrfs-progs man-db man-pages`
+
+## Fingerprints
+
+1. **Install necessary packages**: `pacman -S fprintd usbutils`
+1. **Add fingerprints**:
+   - `fprintd-enroll -f right-index-finger`
+   - `fprintd-enroll -f right-middle-finger`
+   - `fprintd-enroll -f right-ring-finger`
+1. Add the following below pre-auth in `/etc/pam.d/system-auth`:
+   ```
+   auth       [success=1 default=ignore]  pam_succeed_if.so    service = sshd
+   auth       [success=3 default=ignore]  pam_fprintd.so       max-tries=1 timeout=5
+   ```
+   > _**NOTE**_: Ensure that `pam_fprintd.so` skips to `auth optional pam_permit.so`.
