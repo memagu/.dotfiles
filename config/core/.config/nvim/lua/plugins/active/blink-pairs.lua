@@ -1,8 +1,8 @@
 return {
   "saghen/blink.pairs",
-  -- version = "*", -- uncomment and switch to `download()` when fix is released
+  version = "*",
   dependencies = "saghen/blink.lib",
-  build = function() require("blink.pairs").build():pwait(60000) end, -- use `download()` instead of `build()` when fix is released
+  build = function() require("blink.pairs").download():pwait(60000) end,
   event = "BufReadPost",
   config = function()
     require("vim._core.ui2").enable({})
